@@ -8,5 +8,6 @@ Set-ExecutionPolicy RemoteSigned
 ng  g c  commmp
 Get-ExecutionPolicy
 Set-ExecutionPolicy RemoteSigned
+N
 
 <app-fotter></app-fotter>
