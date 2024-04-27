@@ -1,0 +1,41 @@
+ use Hospital_Management_System 
+#INSERTING INTO THE DOCTOR DATABASE
+db.Doctor.insertOne({
+    'Did': 1,
+    'Dname': 'Raju',
+    'Qualification': 'MBBS',
+    'Specialization': 'Cardiologist',
+    'Experience': 10,
+    'Patient_count': 10
+})
+db.Doctor.insertMany([
+    {
+        'Did': 4,
+        'Dname': 'Srinu',
+        'Qualification': 'MBBS',
+        'Specialization': 'Pulmonologist',
+        'Experience': 10,
+        'Patient_count': 10
+    },
+    {
+        'Did': 5,
+        'Dname': 'Radha',
+        'Qualification': 'MBBS',
+        'Specialization': 'Gynecologist',
+        'Experience': 10,
+        'Patient_count': 10
+    }
+])
+
+#ToFind all the Items
+db.Doctor.find({})
+ db.Doctor.find({'Dname':'Raju'})
+db.Doctor.find({}).limit(2)
+#Updating
+db.Doctor.updateOne(
+    {'Specialization': 'Pulmonologist'},
+    {$set: {'Specialization': 'Ophthalmologist'}}
+)
+#Deleting the documents
+db.Doctor.deleteOne({'Did':5})
+
