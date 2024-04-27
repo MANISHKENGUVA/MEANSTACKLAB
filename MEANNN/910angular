@@ -1,0 +1,12 @@
+npm install -g @angular/cli
+ng version
+ng new my-app --no-standalone --routing --ssr=false
+code .
+ng g c compentname
+Set-ExecutionPolicy Bypass -Scope Process
+Set-ExecutionPolicy RemoteSigned
+ng  g c  commmp
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
+
+<app-fotter></app-fotter>
