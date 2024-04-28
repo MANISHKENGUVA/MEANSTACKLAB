@@ -1,0 +1,27 @@
+mean exp2:
+
+>use btrs
+>db.createCollection("Drivers")
+>db.insertMany([{'id':1, 'name':'jas'}, {'id':2,'name':'jas}])
+
+collections:
+drivers (dvr id, dvr name, phn no, bus id)
+bus (bus id, bus num, seats, depo, dvr id, from, to)
+passenger (pid, pname, bus num, age, gender, phn no, address, source, destination, cost, seat number)
+transaction (payment id, pid, transaction date, travelling date)
+depo (depo id, depo name, location, bus id, owner)
+node -v
+npm install -g @angular/cli
+npm fund
+ng version
+ng new jas.app
+code .
+
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
+y
+
+
+cd jas.app
+No
+click the link below

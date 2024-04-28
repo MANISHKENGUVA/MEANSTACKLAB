@@ -1,0 +1,17 @@
+mean exp1:
+
+>use hmsc
+>db.createCollection("Doctor")
+>db.Doctor.insertOne({'id':57})
+
+collections:
+doctor ( id, name, specialization, designation)
+patient ( id, name, disease, mobile no, op date)
+nurse (id, name, specialization)
+operation theater (patient id, doctor id, surgery type, surgery date, cost)
+medical center (id, name, quantity, cost)
+
+
+>db.Doctor.fine({}) 
+>db.Doctor.updateOne({'Specalization':'Nephrologist'},{$set:{'Specalization':'opthamologist'}
+>db.Doctor.deleteOne({'Did':5})
