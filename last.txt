@@ -1,0 +1,469 @@
+mean exp1:
+
+>use hmsc
+>db.createCollection("Doctor")
+>db.Doctor.insertOne({'id':57})
+
+collections:
+doctor ( id, name, specialization, designation)
+patient ( id, name, disease, mobile no, op date)
+nurse (id, name, specialization)
+operation theater (patient id, doctor id, surgery type, surgery date, cost)
+medical center (id, name, quantity, cost)
+
+
+>db.Doctor.fine({}) 
+>db.Doctor.updateOne({'Specalization':'Nephrologist'},{$set:{'Specalization':'opthamologist'}
+>db.Doctor.deleteOne({'Did':5})
+
+
+mean exp2:
+
+>use btrs
+>db.createCollection("Drivers")
+>db.insertMany([{'id':1, 'name':'jas'}, {'id':2,'name':'jas}])
+
+collections:
+drivers (dvr id, dvr name, phn no, bus id)
+bus (bus id, bus num, seats, depo, dvr id, from, to)
+passenger (pid, pname, bus num, age, gender, phn no, address, source, destination, cost, seat number)
+transaction (payment id, pid, transaction date, travelling date)
+depo (depo id, depo name, location, bus id, owner)
+node -v
+npm init
+npm install -g @angular/cli
+npm fund
+ng version
+ng new jas.app --no-standalone
+ng new myyyy --no-standalone --routing --ssr=false
+code .
+
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
+y
+
+
+cd jas.app
+No
+click the link below
+
+
+exp3
+
+var arr=[]
+var arr=["manish","manimoney"]
+arr.push("msss")
+console.log(arr)
+var x=arr.indexOf("manish");
+console.log(x);
+var xx=arr.lastIndexOf("manish");
+
+console.log(xx);
+arr.pop()
+console.log(arr);
+arr.unshift("manish");
+
+console.log(arr);
+arr.shift();
+console.log(arr);
+// Example array
+const numbers = [4, 2, 1, 3];
+
+// Sorting the array
+const sortedNumbers = numbers.sort((a, b) => a - b);
+console.log('Sorted array:', sortedNumbers);
+
+// Concatenating arrays
+const numbers1 = [1, 2, 3];
+const numbers2 = [4, 5, 6];
+const concatenatedNumbers = numbers1.concat(numbers2);
+console.log('Concatenated array:', concatenatedNumbers);
+
+numbers.forEach(number => {
+    console.log('Number:', number);
+});
+
+
+mean exp4
+users.json
+
+[{"name":"Harber","age":30,"language":["MEAN","Express","NodeJS"]},{"name":"Alex Young","age":35,"language":["Angular","MEAN","AngularJS"]},{"name":"John","age":21,"language":["JavaScript","PHP","Python"]},{"name":"Smith","age":25,"language":["PHP","Go","JavaScript"]},{"name":"New User","age":30,"language":["PHP","Go","JavaScript"]}]
+
+index.js
+
+//first this file shoululd  run
+// 4user.json
+//next 
+// node 4index.js
+const users = require("./4users.json");
+console.log(users);
+
+
+const fs = require("fs");
+
+// Read users.json file
+fs.readFile("4users.json", function(err, data) {
+    // Check for errors
+    if (err) {
+        console.error("Error reading file:", err);
+        return;
+    }
+
+    // Converting to JSON
+    const users = JSON.parse(data);
+
+    // Defining new user
+    let user = {
+        name: "New User",
+        age: 30,
+        language: ["PHP", "Go", "JavaScript"]
+    };
+
+    // Adding new data to users object
+    users.push(user);
+
+    // Writing to a file
+    fs.writeFile("4users.json", JSON.stringify(users), err => {
+        // Checking for errors
+        if (err) {
+            console.error("Error writing file:", err);
+            return;
+        }
+        console.log("Done writing"); // Success
+    });
+});
+
+
+exp5
+
+
+npm install express
+npm install express --save
+npm install body-parser --save
+npm install cookie-parser --save
+// npm install express
+// npm install express --save
+// npm install body-parser --save
+// npm install cookie-parser --save
+
+
+var express = require('express'); 
+var app = express(); 
+app.get('/', function (req, res) { 
+res.send('Hello!!!'); 
+}) 
+var server = app.listen(8000, function () { 
+var host = server.address().address 
+var port = server.address().port 
+console.log("Example app listening at http://%s:%s", host, port) 
+}) 
+
+
+
+
+
+exp6
+
+
+
+// npm install express
+// npm install express --save
+// npm install body-parser --save
+// npm install cookie-parser --save
+
+// npm install express
+// npm install express --save
+// npm install body-parser --save
+// npm install cookie-parser --save
+
+const mongoose = require("mongoose");
+
+mongoose.set("strictQuery", false);
+
+mongoose.connect("mongodb://127.0.0.1:27017/demo")
+  .then(() => console.log("Database connected"))
+  .catch((error) => console.log(error));
+
+
+// collect.js
+// Require the mongoose library
+const mongoose = require("mongoose");
+
+// Set mongoose to use non-strict mode for queries
+mongoose.set("strictQuery", false);
+
+// Connect to the MongoDB database named "demo"
+mongoose.connect("mongodb://127.0.0.1:27017/demo")
+  .then(() => console.log("Database connected"))
+  .catch((err) => console.log("Error"));
+
+// Define a schema for the "demo1" collection
+const demoSchema = mongoose.Schema({
+  name: String,
+  ID: Number,
+  address: String
+});
+
+// Create a model named "CustomerData" based on the schema
+const CustomerData = mongoose.model("demo1", demoSchema);
+
+// Log a message indicating that the collection schema has been created
+console.log("Collection schema created");
+
+
+
+
+
+
+//insert
+var mongoose = require("mongoose");
+mongoose.set("strictQuery", false);
+
+mongoose.connect("mongodb://127.0.0.1:27017/demo")
+  .then(() => console.log("Database connected"))
+  .catch((error) => console.log("Error"));
+
+const demoSchema = mongoose.Schema({
+  name: String,
+  ID: Number,
+  address: String
+});
+
+const CustomerData = mongoose.model("demo1", demoSchema);
+
+console.log("Collection schema created");
+
+const c1 = new CustomerData({
+  name: "Anand",
+  ID: 101, // Changed to a number instead of a string
+  address: "vijayawada"
+});
+
+const c2 = new CustomerData({
+  name: "jaahnavi",
+  ID: 102, // Changed to a number instead of a string
+  address: "gudivada"
+});
+
+const c3 = new CustomerData({
+  name: "priya",
+  ID: 103, // Changed to a number instead of a string
+  address: "guntur"
+});
+
+const c4 = new CustomerData({
+  name: "Sai",
+  ID: 104, // Changed to a number instead of a string
+  address: "vijayawada"
+});
+
+const c5 = new CustomerData({
+  name: "AnandSai",
+  ID: 105, // Changed to a number instead of a string
+  address: "vizag"
+});
+
+c1.save();
+c2.save();
+c3.save();
+c4.save();
+c5.save();
+
+console.log("Data Inserted successfully");
+
+
+
+// retrecval
+var mongoose=require("mongoose"); 
+mongoose.set("strictQuery",false); 
+mongoose.connect("mongodb://127.0.0.1:27017/demo") 
+.then(() =>console.log("Database connected")) 
+.catch((Error) =>console.log("Error")); 
+const demo123=mongoose.Schema({ 
+name:String, 
+ID:Number, 
+address:String, 
+}); 
+const CustomerData=mongoose.model("demo1",demo123); 
+ 
+const CustomerDisplay=async () => { 
+const r=await CustomerData.find(); 
+/* CustomerData.find({name:'RAMESH'}); 
+for single filed retrival */ 
+console.log(r); 
+}; 
+CustomerDisplay();
+
+
+
+
+//update
+
+
+var mongoose=require("mongoose"); 
+mongoose.set("strictQuery",false); 
+mongoose.connect("mongodb://127.0.0.1:27017/demo") 
+.then(() =>console.log("Database connected")) 
+.catch((Error) =>console.log("Error")); 
+const demo123=mongoose.Schema({ 
+name:String, 
+ID:Number, 
+address:String, 
+}); 
+const CustomerData=mongoose.model("demo1",demo123); 
+const CustomerDisplay=async () => { 
+const result=await CustomerData.updateOne( 
+{ name:"ramya" },{ $set: { ID:105 } } 
+); 
+console.log(result); 
+}; 
+CustomerDisplay(); 
+
+
+
+
+//Delete
+
+
+
+// Require the mongoose library
+const mongoose = require("mongoose");
+
+// Set mongoose to use non-strict mode for queries
+mongoose.set("strictQuery", false);
+
+// Connect to the MongoDB database named "demo"
+mongoose.connect("mongodb://127.0.0.1:27017/demo")
+  .then(() => console.log("Database connected"))
+  .catch((Error) => console.log("Error"));
+
+// Define a schema for the "demo1" collection
+const demoSchema = mongoose.Schema({
+  name: String,
+  ID: Number,
+  address: String
+});
+
+// Create a model named "CustomerData" based on the schema
+const CustomerData = mongoose.model("demo1", demoSchema);
+
+// Define an asynchronous function to delete documents from the collection
+const CustomerDisplay = async () => {
+  // Delete documents where the ID is equal to 102
+  const result = await CustomerData.deleteOne({ ID: 102 });
+  // Log the result of the operation to the console
+  console.log(result);
+};
+
+// Call the function to execute the deletion operation
+CustomerDisplay();
+
+exp7
+
+//npm install typescript - -save-dev 
+//npm install typescript -g
+//tsc.cmd  7type.ts
+
+function student(name: string, branch: string, cgpa: number) {
+    console.log("student name:" + name);
+    console.log("student branch:" + branch);
+    console.log("student cgpa:" + cgpa);
+}
+
+function studentdefault(name: string = "ravi", branch: string = "cse", cgpa: number = 95) {
+    console.log("student name:" + name);
+    console.log("student branch:" + branch);
+    console.log("student cgpa:" + cgpa);
+}
+
+function studentdetails(name: string, rollno: string, sgpa: number) {
+    console.log("student name:" + name);
+    console.log("student rollno:" + rollno);
+    console.log("student sgpa:" + sgpa);
+}
+
+function studentmarks(...s: number[]) {
+    let sum: number = 0;
+    for (let i = 0; i < s.length; i++) {
+        sum += s[i];
+    }
+    const avg: number = sum / s.length;
+    console.log("total marks:" + sum);
+    console.log("Average marks:" + avg);
+}
+
+// Function calls
+student("dinesh", "cse", 89); // Function with explicit arguments
+studentdefault(); // Function with default arguments
+studentdetails("vamsi", "cse", 85); // Function with explicit arguments
+studentmarks(94, 97, 99, 66, 89, 85); // Function with variable number of arguments
+studentdetails("sandeep", "512", 80); // Function with explicit arguments
+studentmarks(100, 67, 83, 76, 98); // Function with variable number of arguments
+
+
+
+
+///8
+class Student 
+{ 
+studcode:number; 
+studname:string; 
+grade:string; 
+constructor(code:number,name:string,grade:string){ 
+this.studname=name; 
+this.studcode=code; 
+this.grade=grade; 
+} 
+display():void{ 
+console.log("name:",this.studname); 
+console.log("code:",this.studcode); 
+console.log("grade:",this.grade); 
+} 
+} 
+let obj1 =new Student(9491825377,'dinesh','A+'); 
+obj1.display();
+
+
+mean 9,10
+node -v
+npm init
+npm install -g @angular/cli
+npm fund
+ng version
+ng new jas.app --no-standalone
+ng new myyyy --no-standalone --routing --ssr=false
+code .
+
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
+y
+
+
+cd jas.app
+No
+click the link below
+
+
+npm install -g @angular/cli
+ng version
+ng new my-app --no-standalone --routing --ssr=false
+code .
+ng g c compentname
+Set-ExecutionPolicy Bypass -Scope Process
+Set-ExecutionPolicy RemoteSigned
+ng  g c  commmp
+Get-ExecutionPolicy
+Set-ExecutionPolicy RemoteSigned
+N
+Win + R appdata
+roaming -> npm -> Nodemodeules->angular->cli copy the path
+environment variables advance ->new -> pasete karo above copied path 
+ng serve or ng serve -open
+<app-fotter></app-fotter>
+
+
+
+
+
+
+
