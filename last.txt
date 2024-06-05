@@ -463,6 +463,47 @@ ng serve or ng serve -open
 
 
 
+11
+<h1>{{nkame|uppercase}}</h1>
+ nkame = 'Angular'; in ts file
+<h1>{{salary | currency :'INR':'symbol'}}</h1>
+ salary=67000;
+ p={
+    "x"="xyz"
+  }
+<h1>{{p|json}}</h1>
+ng g p mani
+
+12
+<!DOCTYPEhtml>
+<html>
+<scriptsrc="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+<div ng-app=""ng-init="firstName='MEAN STACK'">
+<p>Input something in the input box:</p>
+<p>Name: <inputtype="text"ng-model="firstName"></p>
+<p>You wrote: {{ firstName }}</p>
+</div>
+</body>
+</html>
+
+
+<!DOCTYPEhtml>
+<html>
+<scriptsrc="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+<divng-app=""ng-init="names=['MEAN','FSAD','MERN']">
+<p>Looping with ng-repeat:</p>
+<ul>
+<ling-repeat="x in names">{{ x }}</li>
+</ul>
+</div>
+</body>
+</html>
+
+
+
+
 
 
 
